@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProfitLbl = new System.Windows.Forms.Label();
+            this.PriceLbl = new System.Windows.Forms.Label();
+            this.DiscountedPriceLbl = new System.Windows.Forms.Label();
+            this.BookQuantityTbx = new System.Windows.Forms.TextBox();
+            this.CalculateBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.calculateBtn = new System.Windows.Forms.Button();
-            this.BookQuantityTbx = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.DiscountedPriceLbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.PriceLbl = new System.Windows.Forms.Label();
-            this.ProfitLbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -57,7 +57,7 @@
             this.groupBox1.Controls.Add(this.PriceLbl);
             this.groupBox1.Controls.Add(this.DiscountedPriceLbl);
             this.groupBox1.Controls.Add(this.BookQuantityTbx);
-            this.groupBox1.Controls.Add(this.calculateBtn);
+            this.groupBox1.Controls.Add(this.CalculateBtn);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(33, 138);
@@ -66,6 +66,50 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Discount Amount";
+            // 
+            // ProfitLbl
+            // 
+            this.ProfitLbl.AutoSize = true;
+            this.ProfitLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ProfitLbl.Location = new System.Drawing.Point(11, 158);
+            this.ProfitLbl.Name = "ProfitLbl";
+            this.ProfitLbl.Size = new System.Drawing.Size(0, 20);
+            this.ProfitLbl.TabIndex = 7;
+            // 
+            // PriceLbl
+            // 
+            this.PriceLbl.AutoSize = true;
+            this.PriceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.PriceLbl.Location = new System.Drawing.Point(11, 91);
+            this.PriceLbl.Name = "PriceLbl";
+            this.PriceLbl.Size = new System.Drawing.Size(0, 20);
+            this.PriceLbl.TabIndex = 6;
+            // 
+            // DiscountedPriceLbl
+            // 
+            this.DiscountedPriceLbl.AutoSize = true;
+            this.DiscountedPriceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.DiscountedPriceLbl.Location = new System.Drawing.Point(11, 124);
+            this.DiscountedPriceLbl.Name = "DiscountedPriceLbl";
+            this.DiscountedPriceLbl.Size = new System.Drawing.Size(0, 20);
+            this.DiscountedPriceLbl.TabIndex = 4;
+            // 
+            // BookQuantityTbx
+            // 
+            this.BookQuantityTbx.Location = new System.Drawing.Point(162, 46);
+            this.BookQuantityTbx.Name = "BookQuantityTbx";
+            this.BookQuantityTbx.Size = new System.Drawing.Size(71, 29);
+            this.BookQuantityTbx.TabIndex = 3;
+            // 
+            // CalculateBtn
+            // 
+            this.CalculateBtn.Location = new System.Drawing.Point(46, 190);
+            this.CalculateBtn.Name = "CalculateBtn";
+            this.CalculateBtn.Size = new System.Drawing.Size(187, 34);
+            this.CalculateBtn.TabIndex = 2;
+            this.CalculateBtn.Text = "Calculate";
+            this.CalculateBtn.UseVisualStyleBackColor = true;
+            this.CalculateBtn.Click += new System.EventHandler(this.CalculateBtn_Click);
             // 
             // label1
             // 
@@ -92,6 +136,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Big Offer";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.label6.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(53, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 21);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Book Unit Price : 8$";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(24, 190);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(206, 21);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "21+ Book -> % 40 Discount";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -114,54 +180,6 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "0-10 Book -> % 20 Discount";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.label5.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(24, 190);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 21);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "21+ Book -> % 40 Discount";
-            // 
-            // calculateBtn
-            // 
-            this.calculateBtn.Location = new System.Drawing.Point(46, 190);
-            this.calculateBtn.Name = "calculateBtn";
-            this.calculateBtn.Size = new System.Drawing.Size(187, 34);
-            this.calculateBtn.TabIndex = 2;
-            this.calculateBtn.Text = "Calculate";
-            this.calculateBtn.UseVisualStyleBackColor = true;
-            this.calculateBtn.Click += new System.EventHandler(this.calculateBtn_Click);
-            // 
-            // BookQuantityTbx
-            // 
-            this.BookQuantityTbx.Location = new System.Drawing.Point(162, 46);
-            this.BookQuantityTbx.Name = "BookQuantityTbx";
-            this.BookQuantityTbx.Size = new System.Drawing.Size(71, 29);
-            this.BookQuantityTbx.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.label6.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(53, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 21);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Book Unit Price : 8$";
-            // 
-            // DiscountedPriceLbl
-            // 
-            this.DiscountedPriceLbl.AutoSize = true;
-            this.DiscountedPriceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.DiscountedPriceLbl.Location = new System.Drawing.Point(11, 124);
-            this.DiscountedPriceLbl.Name = "DiscountedPriceLbl";
-            this.DiscountedPriceLbl.Size = new System.Drawing.Size(0, 20);
-            this.DiscountedPriceLbl.TabIndex = 4;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -180,24 +198,6 @@
             this.label7.Size = new System.Drawing.Size(88, 31);
             this.label7.TabIndex = 5;
             this.label7.Text = "Book ";
-            // 
-            // PriceLbl
-            // 
-            this.PriceLbl.AutoSize = true;
-            this.PriceLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.PriceLbl.Location = new System.Drawing.Point(11, 91);
-            this.PriceLbl.Name = "PriceLbl";
-            this.PriceLbl.Size = new System.Drawing.Size(0, 20);
-            this.PriceLbl.TabIndex = 6;
-            // 
-            // ProfitLbl
-            // 
-            this.ProfitLbl.AutoSize = true;
-            this.ProfitLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.ProfitLbl.Location = new System.Drawing.Point(11, 158);
-            this.ProfitLbl.Name = "ProfitLbl";
-            this.ProfitLbl.Size = new System.Drawing.Size(0, 20);
-            this.ProfitLbl.TabIndex = 7;
             // 
             // label2
             // 
@@ -249,7 +249,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox BookQuantityTbx;
-        private System.Windows.Forms.Button calculateBtn;
+        private System.Windows.Forms.Button CalculateBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;

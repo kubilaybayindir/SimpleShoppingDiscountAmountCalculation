@@ -19,7 +19,9 @@ namespace ShoppingDiscountAmountCalculation
         public int bookQuantity;
         public int unitPrice =8;
         public double DiscountAmount;
-        private void calculateBtn_Click(object sender, EventArgs e)
+        double WithoutDiscountedresult=0;
+        double Discountedresult = 0;
+        private void CalculateBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -29,36 +31,46 @@ namespace ShoppingDiscountAmountCalculation
             {
                 MessageBox.Show(ex.Message, "Error");
             }
-
-            if (bookQuantity >0)
+            finally
             {
-                if ((bookQuantity > 0) && (bookQuantity <= 10))
+                if (bookQuantity > 0)
                 {
-                    DiscountAmount = 0.2;
-                }
-                else
-                {
-                    if ((bookQuantity >= 11) && (bookQuantity <= 20))
+                    if ((bookQuantity > 0) && (bookQuantity <= 10))
                     {
-                        DiscountAmount = 0.3;
+                        DiscountAmount = 0.2;
                     }
                     else
                     {
-                        DiscountAmount = 0.4;
+                        if ((bookQuantity >= 11) && (bookQuantity <= 20))
+                        {
+                            DiscountAmount = 0.3;
+                        }
+                        else
+                        {
+                            DiscountAmount = 0.4;
+                        }
                     }
+                    WithoutDiscountedresult = unitPrice * bookQuantity;
+                    Discountedresult = unitPrice * (1 - DiscountAmount) * bookQuantity;
+                    PriceLbl.Text = "Without Discount:      " + WithoutDiscountedresult.ToString() + " $";
+                    DiscountedPriceLbl.Text = "Discounted Price: " + Discountedresult.ToString() + " $";
+
+                    ProfitLbl.Text = "Profit:                    " + (WithoutDiscountedresult - Discountedresult).ToString() + " $";
+                }
+                else
+                {
+                    MessageBox.Show("Quantity can not be negative!", "Error");
+                    BookQuantityTbx.Text = "";
+                    PriceLbl.Text = "";
+                    DiscountedPriceLbl.Text = "";
+                    ProfitLbl.Text = "";
                 }
             }
-            else
-            {
-                MessageBox.Show("Quantity can not be negative!","Error" );
-            }
-            double WithoutDiscountedresult = unitPrice * bookQuantity;
-            double Discountedresult = unitPrice * (1 - DiscountAmount) * bookQuantity;
-            
-            PriceLbl.Text = "Without Discount:      " + WithoutDiscountedresult.ToString() + " $";
-            DiscountedPriceLbl.Text = "Discounted Price: " + Discountedresult.ToString() + " $";
 
-            ProfitLbl.Text = "Profit:                    " + (WithoutDiscountedresult-Discountedresult).ToString() + " $";
+
+
+            
+
 
         }
     }
